@@ -1,0 +1,231 @@
+{% block block1 %}
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+    <title>Smart Tours</title>
+  </head>
+  <style type="text/css">
+    .col-md-2{
+      border-style: groove;
+      height: 105vh;
+    }
+    .second-col-bg{
+      background-image: url("../static/images/hbg2.jpg");
+      background-repeat: no-repeat, repeat;
+      background-position: center;
+      background-size: cover;
+      height: 100%;
+    }
+ 
+  .bg-text3{
+    /*background-color: rgb(0,0,0); /* Fallback color */
+    /*background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    font-family: serif;
+    position: absolute;
+    top: 60%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+  }
+  .bg-text4{
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    position: absolute;
+    top: 60%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 500px;
+    height: 300px;
+    padding: 20px;
+  }
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 430px;
+    height: 70px;
+    left: 36%;
+    border-radius: 10px;
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  footer{
+   background: #111;
+   height: auto;
+   width: 100vw;
+   font-family: "Open Sans"; 
+   padding-top:40px;
+   color: #fff;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.footer-content h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+.socials{
+    background-color: #000 ;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+.socials li{
+    margin:0 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+}
+.socials a i{
+    font-size: 1.1rem;
+    transition: color .4s ease;
+}
+.socials a:hover{
+    color: aqua;
+}
+.footer-bottom{
+    background: #000;
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;
+
+}
+.footer-content p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+.footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}
+  </style>
+{% endblock %}
+{% block block2 %}
+<div class="fluid-container" border=2>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="/home">Smart Tours</a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tours">Book Tour</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/bookbus" tabindex="-1" aria-disabled="true">Book Bus</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/bookflight" tabindex="-1" aria-disabled="true">Book Flight</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/seasonsdashboard" tabindex="-1" aria-disabled="true">Seasonal Analysis</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/createtour">Create Own Tour</a>
+        </li>
+        
+      </ul>
+      <div class="dropdown" style="margin-right: 80px;">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          Menu
+        </a>
+
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <li><a class="dropdown-item" href="/profile">Profile</a></li>
+          <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+          <li><a class="dropdown-item" href="/logout">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+</div>
+{% endblock %}
+{% block block3 %}
+   <br>
+<div class="row gx-5">
+          <div class="col">
+           <div class="p-3 border bg-light"><h3 style="text-decoration: underline;color: #FB0000 ;" align="center">Optimized Tour Plan As Per Your Requirements</h3></div>
+          </div>
+ </div>
+
+ <div class="row">
+ 		<div class="col-md-3"></div>
+ 		<div class="col-md-3"><br><h5>Tourist Place</h5></div>
+ 		<div class="col-md-3"><br><h5>Time</h5></div>
+ 		<div class="col-md-3"><br><h5>Cost</h5></div>
+ 	</div>
+
+ {% for content in plan %}
+ <br>
+ <div class="card">
+ 	<div class="row">
+ 		<div class="col-md-3"><img src="../static/images/confirmimage.jpg" height="60" width="60"></div>
+ 		<div class="col-md-3"><br>{{content.0}}</div>
+ 		<div class="col-md-3"><br>{{content.1}} days</div>
+ 		<div class="col-md-3"><br>{{content.2}} /-</div>
+ 	</div>
+ </div>
+{% endfor %}
+<br>
+<h1  align="center"><label style="font-weight: 15px;">Tour Time : {{days}} and Budget : {{budget}}</label></h1><br>
+<button class="btn btn-primary" style="margin-left: 700px;"><a href="/shortpath" style="color: white;text-decoration: none;">Confirm</a></button>
+{% endblock %}
+{% block block4 %}
+{% endblock %}
+{% block bloc4%}
+<br>
+<!--<footer>
+        <div class="footer-content">
+            <h3>Smart Tours</h3>
+            <p>Website developed by Batch-300 as a Skill Development Project</p>
+            <!--<ul class="socials">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+
+            </ul>!!
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy;2021 Smart Tours. designed by <span>SDP Project Batch-300</span></p>
+
+        </div>
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+{% endblock %}-->

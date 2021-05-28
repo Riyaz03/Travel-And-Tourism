@@ -1,0 +1,61 @@
+{% extends 'bookbuspage.html' %}
+{% block cardsblock %}
+{% for bus in buses %}
+  	<div class="card" style="margin-left: 30px;">
+  		<div class="row">
+        <div class="col-sm-3">
+        <img src="../static/images/buslogo.jpg" height="140" width="200">
+        {{bus.travels}}
+        </div>
+        <div class="col-sm-2">
+          <h5 align="center" style="color: green;">Departure</h5><br>
+        <h6 align="center">{{bus.departure_timeHours}}:{{bus.departure_timeMinutes}}</h6><br><h6 align="center" style="color: #5097FF;">{{bus.departure_palce}}</h6>
+        </div>
+        <div class="col-sm-2">
+          <h5 align="center" style="color: green;">Duration</h5><br>
+          <h6 align="center">{{bus.duration}}</h6>
+        </div>
+        <div class="col-sm-2">
+          <h5 align="center" style="color: green;">Arrival</h5><br>
+          <h6 align="center">
+        {{bus.arrival_timeHours}}:{{bus.arrival_timeMinutes}}</h6><br>
+        <h6 align="center" style="color: #5097FF;">{{bus.arrival_place}}</h6>
+        </div>
+        <div class="col-sm-1">
+        <h5 align="center" style="color: green;">Fare</h5><br>
+        <h6 align="center" style="color: #7ECA58;">Starts From</h6>
+        <h6 align="center">INR{{bus.fare}}</h6>
+        </div>
+        <div class="col-sm-1">
+        <h5 align="center" style="color: green;">Date/Day</h5><br>
+        <h6 align="center" style="color: #7ECA58;">{{bus.date}}</h6>
+        <h6 align="center">{{bus.day}}</h6>
+        </div>
+        <div class="col-sm-1">
+        <br><br>
+        <button class="btn btn-info"><a href="/viewseats/{{bus.travels}}" style="text-decoration: none;color: white;">View Seats</a></button>
+        </div>
+      </div>	
+  	</div>
+    <br>
+{% endfor %}
+<footer>
+        <div class="footer-content">
+            <h3>Smart Tours</h3>
+            <p>Website developed by Batch-300 as a Skill Development Project</p>
+            <!--<ul class="socials">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+
+            </ul>-->
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy;2021 Smart Tours. designed by <span>SDP Project Batch-300</span></p>
+
+        </div>
+    </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+{% endblock %}
+

@@ -1,0 +1,113 @@
+  {% block headblock %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>Tours</title>
+  </head>
+  {% endblock %}
+  {% block styleblock %}
+  <style>
+  	.card {
+	  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	  transition: 0.3s;
+	  width: 300px;
+	  height: 350px;
+	  border-radius: 10px;
+	}
+	.card:hover {
+	  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+	}
+  .btn-info{
+    height: 65px;
+    width: 90px;
+  }
+</style>
+{% endblock %}
+{% block topdivblock %}
+<style>
+	.top-div{
+  		background-image: url("../static/images/bg4.jpg");
+  		background-repeat: no-repeat;
+  		background-position: center;
+  		background-size: cover; 
+  		height: 50vh;
+  		width: 100%;
+  	}
+  </style>
+{% endblock %}
+{% block navtop %}
+		<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="/home">Smart Tours</a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link   active" href="/tours">Book Tour</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/bookbus" tabindex="-1" aria-disabled="true">Book Bus</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/bookflight" tabindex="-1" aria-disabled="true">Book Flight</a>
+        </li>
+      </ul>
+      <div class="dropdown" style="margin-right: 80px;">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          Menu
+        </a>
+
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <li><a class="dropdown-item" href="/profile">Profile</a></li>
+          <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+          <li><a class="dropdown-item" href="/logout">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </div>
+</nav>
+{% endblock %}
+{% block topdiv %}
+<!--nav bar end--->
+<div class="top-div">
+  <!--<form method="POST">
+    <div class="input-group mb-3" style="width: 800px;height: 50px; left: 20%;">
+      <input type="text" class="form-control" placeholder="From" aria-label="Username">
+      <span class="input-group-text"><-></span>
+      <input type="text" class="form-control" placeholder="To" aria-label="Server">
+      <input type="text" class="form-control" placeholder="DD//MM//YYYY" aria-label="Server"style="width: 20px;">
+      <button class="btn btn-outline-secondary" type="button" id="button-addon2" style="color: black;">Search</button>
+    </div>
+  </form>-->
+</div>
+<br>
+{% endblock %}
+
+{% block cardsblock %}
+
+	<div class="row">
+		{% for tour in tours %}
+		<div class="col-md-3" style="margin-top: 15px;">
+			<div class="card">
+				<div style="background-color: aqua;">
+					<h1 align="center">{{tour.location}}</h1>
+				</div>
+				<br>
+				<img src="../static/images/delhi.jpg" height="200">
+				<br>
+				<button class="btn btn-info" style="margin-left: 80px;width: 100px;"><a href="/tourinformation/{{tour.location}}" style="text-decoration: none;color: white;">Book Tour</a></button>
+			</div>	
+		</div>
+		{% endfor %}
+	</div>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+{% endblock %}
+

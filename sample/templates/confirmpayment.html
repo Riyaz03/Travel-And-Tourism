@@ -1,0 +1,43 @@
+{% extends 'buspaymentpage.html' %}
+
+{% block topblock %}
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+	<title>Confirm</title>
+</head>
+{% endblock %}
+
+{% block block2 %}
+<center>
+<label style="font-size: 30px;color: green; text-decoration: underline;">Payment Successful!</label></center>
+<div class="card" style="margin-top: 100px;margin-bottom: 100px;">
+<center>
+	<img src="../static/images/confirmimage.jpg" height="350" width="350">
+	<label style="font-size: 30px;color: blue;">Ticket Booked</label>
+</center>
+
+
+</div>
+<footer>
+        <div class="footer-content">
+            <h3>Smart Tours</h3>
+            <p>Website developed by Batch-300 as a Skill Development Project</p>
+            <!--<ul class="socials">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+
+            </ul>-->
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy;2021 Smart Tours. designed by <span>SDP Project Batch-300</span></p>
+
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+{% endblock %}

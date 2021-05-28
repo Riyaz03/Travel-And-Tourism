@@ -1,0 +1,163 @@
+{% extends 'bookbuspage.html' %}
+{% block topdivblock %}
+<style>
+   footer{
+   background: #111;
+   height: auto;
+   width: 100vw;
+   font-family: "Open Sans"; 
+   padding-top:40px;
+   color: #fff;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.footer-content h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+.socials{
+    background-color: #000 ;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+.socials li{
+    margin:0 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+}
+.socials a i{
+    font-size: 1.1rem;
+    transition: color .4s ease;
+}
+.socials a:hover{
+    color: aqua;
+}
+.footer-bottom{
+    background: #000;
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;
+
+}
+.footer-content p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+.footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}
+  </style>
+{% endblock %}
+{% block navmiddle %}
+        <li class="nav-item">
+          <a class="nav-link" href="/bookbus" tabindex="-1" aria-disabled="true">Book Bus</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/bookflight" tabindex="-1" aria-disabled="true">Book Flight</a>
+        </li>
+      </ul>
+{% endblock %}
+{% block navbottom %}
+      <div class="dropdown" style="margin-right: 80px;">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          Menu
+        </a>
+
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <li><a class="dropdown-item" href="/profile">Profile</a></li>
+          <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+          <li><a class="dropdown-item" href="/aboutus">About Us</a></li>
+          <li><a class="dropdown-item" href="/logout">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </div>
+</nav>
+<!--nav bar end--->
+<br>
+{% endblock %}
+{% block cardsblock %}
+<h1 align="center" style="text-decoration: underline;">Pie Chart</h1><br><br>
+
+<div id="container" style="width: 95%;">
+    <canvas id="line-chart"></canvas>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script>
+    var ctx = $("#line-chart");
+const labels = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+];
+const data = {
+  labels: labels,
+  datasets: [{
+    label: 'My First dataset',
+    backgroundColor: 'rgb(255, 99, 132)',
+    borderColor: 'rgb(255, 99, 132)',
+    data: [0, 10, 5, 2, 20, 30, 45],
+  }]
+};
+    
+      const config = {
+        type: 'line',
+        data,
+        options: {}
+      };
+
+  </script>
+  <script>
+  // === include 'setup' then 'config' above ===
+
+  var myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+</script>
+  <br><br>
+  <footer>
+        <div class="footer-content">
+            <h3>Smart Tours</h3>
+            <p>Website developed by Batch-300 as a Skill Development Project</p>
+            <!--<ul class="socials">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+
+            </ul>-->
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy;2021 Smart Tours. designed by <span>SDP Project Batch-300</span></p>
+
+        </div>
+    </footer>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+{% endblock %}

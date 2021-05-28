@@ -1,0 +1,6 @@
+<form method="POST">
+						{% csrf_token %}
+						{{form.as_p}}
+						<br>
+						<input type="submit" value="Login" class="btn btn-primary">
+						</form>

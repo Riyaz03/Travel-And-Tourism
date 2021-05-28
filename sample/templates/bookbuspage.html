@@ -1,0 +1,226 @@
+  {% block headblock %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>Buses</title>
+  </head>
+  {% endblock %}
+  {% block styleblock %}
+  <style>
+  	.card {
+	  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	  transition: 0.3s;
+	  width: 1474px;
+	  height: 150px;
+	  border-radius: 10px;
+	}
+	.card:hover {
+	  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+	}
+  .btn-info{
+    height: 65px;
+    width: 90px;
+  }
+  footer{
+   background: #111;
+   height: auto;
+   width: 100vw;
+   font-family: "Open Sans"; 
+   padding-top:40px;
+   color: #fff;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.footer-content h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+.socials{
+    background-color: #000 ;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+.socials li{
+    margin:0 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+}
+.socials a i{
+    font-size: 1.1rem;
+    transition: color .4s ease;
+}
+.socials a:hover{
+    color: aqua;
+}
+.footer-bottom{
+    background: #000;
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;
+
+}
+.footer-content p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+.footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}
+</style>
+{% endblock %}
+{% block topdivblock %}
+<style>
+	.top-div{
+  		background-image: url("../static/images/bg4.jpg");
+  		background-repeat: no-repeat;
+  		background-position: center;
+  		background-size: cover; 
+  		height: 50vh;
+  		width: 100%;
+  	}
+  </style>
+{% endblock %}
+{% block navtop %}
+		<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="/home">Smart Tours</a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tours">Book Tour</a>
+        </li>
+{% endblock %}
+{% block navmiddle %}
+        <li class="nav-item">
+          <a class="nav-link  active" href="/bookbus" tabindex="-1" aria-disabled="true">Book Bus</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/bookflight" tabindex="-1" aria-disabled="true">Book Flight</a>
+        </li>
+      </ul>
+{% endblock %}
+{% block navbottom %}
+      <div class="dropdown" style="margin-right: 80px;">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          Menu
+        </a>
+
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <li><a class="dropdown-item" href="/profile">Profile</a></li>
+          <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+          <li><a class="dropdown-item" href="/aboutus">About Us</a></li>
+          <li><a class="dropdown-item" href="/logout">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </div>
+</nav>
+<!--nav bar end--->
+<div class="top-div">
+  <div><br><br><br><br><br><br></div>
+  <div>
+      <form method="POST" action="{% url 'busfilter' %}">
+        {% csrf_token %}
+        <div class="input-group mb-3" style="width: 800px;height: 50px; left: 25%;">
+          <input type="text" class="form-control" placeholder="From" aria-label="Username" name="dep">
+          <span class="input-group-text"><-></span>
+          <input type="text" class="form-control" placeholder="To" aria-label="Server" name="arr">
+          <input type="text" class="form-control" placeholder="DD//MM//YYYY" aria-label="Server"style="width: 20px;" name="d">
+          <button class="btn btn-outline-secondary" type="submit" id="button-addon2" style="color: black;">Search</button>
+        </div>
+      </form>
+  </div>
+</div>
+<br>
+{% endblock %}
+
+{% block cardsblock %}
+{% for bus in buses %}
+  	<div class="card" style="margin-left: 30px;">
+  		<div class="row">
+        <div class="col-sm-3">
+        <img src="../static/images/buslogo.jpg" height="140" width="200">
+        {{bus.travels}}
+        </div>
+        <div class="col-sm-2">
+          <h5 align="center" style="color: green;">Departure</h5><br>
+        <h6 align="center">{{bus.departure_timeHours}}:{{bus.departure_timeMinutes}}</h6><br><h6 align="center" style="color: #5097FF;">{{bus.departure_palce}}</h6>
+        </div>
+        <div class="col-sm-2">
+          <h5 align="center" style="color: green;">Duration</h5><br>
+          <h6 align="center">{{bus.duration}}</h6>
+        </div>
+        <div class="col-sm-2">
+          <h5 align="center" style="color: green;">Arrival</h5><br>
+          <h6 align="center">
+        {{bus.arrival_timeHours}}:{{bus.arrival_timeMinutes}}</h6><br>
+        <h6 align="center" style="color: #5097FF;">{{bus.arrival_place}}</h6>
+        </div>
+        <div class="col-sm-1">
+        <h5 align="center" style="color: green;">Fare</h5><br>
+        <h6 align="center" style="color: #7ECA58;">Starts From</h6>
+        <h6 align="center">INR{{bus.fare}}</h6>
+        </div>
+        <div class="col-sm-1">
+        <h5 align="center" style="color: green;">Date/Day</h5><br>
+        <h6 align="center" style="color: #7ECA58;">{{bus.date}}</h6>
+        <h6 align="center">{{bus.day}}</h6>
+        </div>
+        <div class="col-sm-1">
+        <br><br>
+        <button class="btn btn-info"><a href="/viewseats/{{bus.travels}}" style="text-decoration: none;color: white;">View Seats</a></button>
+        </div>
+      </div>	
+  	</div>
+    <br>
+{% endfor %}
+<footer>
+        <div class="footer-content">
+            <h3>Smart Tours</h3>
+            <p>Website developed by Batch-300 as a Skill Development Project</p>
+            <!--<ul class="socials">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+
+            </ul>-->
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy;2021 Smart Tours. designed by <span>SDP Project Batch-300</span></p>
+
+        </div>
+    </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+{% endblock %}
+
