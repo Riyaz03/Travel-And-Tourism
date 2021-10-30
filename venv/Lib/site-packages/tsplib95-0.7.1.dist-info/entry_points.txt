@@ -1,0 +1,3 @@
+[console_scripts]
+tsplib95 = tsplib95.cli:cli
+
