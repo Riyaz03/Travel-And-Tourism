@@ -1,7 +1,7 @@
 # Travel-And-Tourism
 Link for Exceution Video of the Project: https://youtu.be/wU_f0JG_hdc
 Link for LinkedIn Article: https://www.linkedin.com/pulse/travel-tourismskill-development-project-shaik-riyaz-basha
-
+Link to Host the Project On Heroku : https://studygyaan.com/django/django-everywhere-host-your-django-app-for-free-on-heroku
 A complete Travel and Tourism Website developed using Django framework
 
 Modules:
