@@ -20,10 +20,8 @@ networkx==2.6.3
 numpy==1.22.1
 pathspec==0.5.9
 platformdirs==2.4.0
-pypiwin32==223
 python-dateutil==2.8.2
 python-tsp==0.2.1
-pywin32==302
 PyYAML==5.4.1
 requests==2.26.0
 semantic-version==2.8.5
