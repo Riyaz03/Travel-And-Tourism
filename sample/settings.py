@@ -28,7 +28,7 @@ SECRET_KEY = 'hn)kgv#ws2-k*zmj#g6y$72pfrkh%l!5am2r6k@d8nw@cecd)m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','tavelandtourism-django.herokuapp.com']
 
 
 # Application definition
